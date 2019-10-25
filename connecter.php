@@ -17,7 +17,7 @@ $identifiant->execute();
 		$_SESSION['mdp']=$row['motdepasse'];
 	header("Location:accueil.php");}
 
-	else{ echo "Echec de l'authentification";}
+	else{ echo '<script>alert("Echec de authentification");</script>';}
 
 
 }
@@ -38,6 +38,11 @@ $identifiant->execute();
 			return false;
 		}
 	}
+
+	function verins(){
+		top.location="inscrire.php";
+	}
+
 	-->
 </script>
 
@@ -45,21 +50,32 @@ $identifiant->execute();
 <html>
 <head>
 	<title>connecter</title>
+	<meta charset="UTF-8"/>
+  <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css"/>
+  <meta name="viewport" content="width=max-device-width, initial-scale=1"/>
 </head>
-<body>
+<body id="icb">
+	<div id="cdiv1">
 <form method="post" name="f1" onsubmit="return verifier();">
-	Votre pseudo: <input type="text" name="pseudo" size="50"><br><br>
-	Mot de passe: <input type="password" name="mdp" size="50"><br><br>
-					<input type="submit" name="c" value="Connecter">
+	Votre pseudo: <input style="BACKGROUND-COLOR: transparent; color:white;" type="text" name="pseudo" size="35"><br><br>
+	Mot de passe: <input style="BACKGROUND-COLOR: transparent; color:white;" type="password" name="mdp" size="35"><br><br>
+					<input id="sub" type="submit" name="c" value="Connecter">
 	
 </form>
-<form name="f2" method="post" action="inscrire.php">
+
 	Vous n'avez pas de compte? <br><br>
-	<input type="submit" name="i" value="S'inscrire">
+	<button onclick="verins();">S'inscrire</button>
+	
 
 </form>
-
-
+</div>
+<div id="idiv2">
+	<h1 style="filter:alpha(opacity=50)">
+		Bienvenu!<br>
+		欢迎！
+	</h1>
+	
+</div>
 </body>
 </html>
 

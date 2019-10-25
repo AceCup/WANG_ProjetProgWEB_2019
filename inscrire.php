@@ -30,7 +30,9 @@ function verifier(){
 
 
 
-
+function connecter(){
+	top.location="connecter.php";
+}
 
 
 
@@ -53,19 +55,23 @@ function verifier(){
 <html>
 <head>
 	<title>Inscription</title>
-
+<meta charset="UTF-8"/>
+  <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css"/>
+  <meta name="viewport" content="width=max-device-width, initial-scale=1"/>
 </head>
-<body>
+<body id="icb">
+	<div id="idiv1">
 
 <form method="post" name="f1" onsubmit="return verifier();">
-	Nom: <input type="text" size="20" name="nom"><br><br>
-	Prenom: <input type="text" size="20" name="prenom"><br><br>
-	Email: <input type="text" size="20" name="email"  placeholder="exemple@mail.com"><br><br>
-	Mot de passe: <input type="password" size="20" name="mdp"><br><br>
-	pseudo: <input type="text" size="20" name="pseudo"><br><br>
-	<input type="submit" name="v" value="Valider"><br><br>
+	Nom:<br> <input style="BACKGROUND-COLOR: transparent; color:white;" type="text" size="20" name="nom"><br><br>
+	Prenom:<br> <input style="BACKGROUND-COLOR: transparent; color:white;"  type="text" size="20" name="prenom"><br><br>
+	Email:<br> <input style="BACKGROUND-COLOR: transparent; color:white;"  type="text" size="20" name="email"  placeholder="exemple@mail.com"><br><br>
+	Mot de passe:<br> <input style="BACKGROUND-COLOR: transparent; color:white;"  type="password" size="20" name="mdp"><br><br>
+	Pseudo:<br> <input style="BACKGROUND-COLOR: transparent; color:white;"  type="text" size="20" name="pseudo"><br><br>
+	<input id="sub" type="submit" name="v" value="Valider"><br><br>
 </form>
-
+<p>Vous avez déjà un compte?</p><br><br>
+<button onclick="connecter();">Se connecter</button><br>
 <?php
 include("connexion.php");
 try{
@@ -106,6 +112,14 @@ else{
 
 
 ?>
+</div>
+<div id="idiv2">
+	<h1 >
+		Bienvenu!<br>
+		欢迎！
+	</h1>
+	
+</div>
 
 </body>
 </html>

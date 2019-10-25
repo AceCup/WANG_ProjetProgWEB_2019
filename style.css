@@ -1,0 +1,118 @@
+@font-face {font-family: quicksand;
+src:url('quicksand/Quicksand-Bold.otf');
+
+}
+body{
+	font-family: quicksand;
+}
+
+#idiv1{
+	background-color: lightblue;
+	text-align: center;
+	border-radius: 20px;
+    width: 300px;
+    height: 700px;
+    margin: auto;
+     position: absolute;
+    top: 0;
+    left: 900;
+    right: 0;
+    bottom: 0;
+     background: rgba(0, 0, 0, 0.6);
+   color: white;
+
+}
+#idiv2{
+	text-align: center;
+	position: absolute;
+    top: 290;
+    left: 0;
+    right: 800;
+    bottom: 0;
+    color: white;
+
+
+}
+#cdiv1{
+	background-color: lightblue;
+	text-align: center;
+	border-radius: 20px;
+    width: 300px;
+    height: 700px;
+    margin: auto;
+     position: absolute;
+    top: 0;
+    left: 900;
+    right: 0;
+    bottom: 0;
+     background: rgba(0, 0, 0, 0.6);
+    
+     color: white;
+   }
+
+    
+#icb{
+ 	background-image: url("saber-fate-series-wallpaper-1080p-468970.jpg");
+ 	background-position: center;
+ 	
+ }
+
+header{position: fixed;
+      left: 0;
+      top:0;
+      width:100%;
+
+
+}
+nav{
+	background-color: #FE6B0C;
+	color:white;
+    text-align: center;
+   
+height:40px;
+padding-top: 7px;
+}
+#ab{
+	
+	background-color: skyblue;
+	background-attachment:fixed ;
+	background-position: center;
+
+	
+}
+#rb{
+
+	background-color: skyblue;
+	background-attachment:fixed ;
+	background-position: center;
+}
+#adiv1{
+	
+	
+}
+#adiv2{
+	
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+   padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#sub{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+   padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 10px;
+
+}

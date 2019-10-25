@@ -39,6 +39,9 @@ include("connexion.php");
 		
 	}
 //456416
+	function annuler(){
+		top.location="accueil.php";
+	}
 
 	-->
 
@@ -51,28 +54,32 @@ include("connexion.php");
 
 
 <html>
-<?php
+
+
+
+<head >
+	<title>Accueil</title>
+	<meta charset="UTF-8"/>
+  <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css"/>
+  <meta name="viewport" content="width=max-device-width, initial-scale=1"/>
+ 
+</head>
+<header id="aheader">
+	<nav>
+	 <?php
 
 if (isset($_SESSION['pseudo'])) {
-	echo "Bonjour, ",$_SESSION['pseudo']."!"."<br>";
+	echo "Bonjour, ",$_SESSION['pseudo']."!"."&nbsp";
 	echo "<button onclick='deconnecter()'>Se deconnecter</button>". "<br>";
 }else{
-	echo "Veuillez vous connecter " . "<br>" ." <button  onclick='connecter()'>Se connecter</button>". "<br>" ;
-
-	
-
+	echo "Veuillez vous connecter " . "&nbsp" ." <button  onclick='connecter()'>Se connecter</button>". "<br>" ;
 }
 
-
-
-
 ?>
-
-
-<head>
-	<title>Accueil</title>
-</head>
-<body>
+	
+</nav>
+</header>
+<body id="ab">
 
 
 <?php
@@ -85,11 +92,11 @@ if (isset($_POST['titre'])&&isset($_POST['textes'])) {
 	header("Location:accueil.php");
 }
 ?>
-<div style="border:1px solid black; margin-top: 50px; margin-bottom: 50px;" >
+<div id="adiv1" style="border:1px solid black; margin-top: 50px; margin-bottom: 50px;" >
 
 <?php
 //afficher des articles
-$afficher=$objPdo->query('SELECT * FROM wang245u_blog.sujet, wang245u_blog.redacteur WHERE wang245u_blog.sujet.idredacteur=wang245u_blog.redacteur.idredacteur');
+$afficher=$objPdo->query('SELECT * FROM wang245u_blog.sujet, wang245u_blog.redacteur WHERE wang245u_blog.sujet.idredacteur=wang245u_blog.redacteur.idredacteur ORDER BY datesujet desc' );
 while ($row=$afficher->fetch()) {
 	//$_SESSION['ids']=$row['idsujet'];
 	$ids=$row['idsujet'];
@@ -99,7 +106,7 @@ while ($row=$afficher->fetch()) {
 	echo "<p>".$row['textesujet']."</p>";
 	echo "</article>";
 	
-	echo" <a name='r' style='cursor:pointer; color:blue;' href=' repondre.php?idsujet=$ids' >repondre</a>"."</br>";
+	echo" <a name='r' style='cursor:pointer; text-decoration:none; color:white;' href=' repondre.php?idsujet=$ids' >repondre</a>"."</br>";
 
 	 
 }
@@ -111,10 +118,14 @@ $afficher->closeCursor();
 </div>
 
  
+
+
+</body>
+<div id="adiv2">
 <form name="f1" method="post" onsubmit="return vtext();">
 	titre de sujet:<br><br> <input type="text" name="titre" size="50" ><br><br>
 	la contenu de sujet:<br><br> <textarea name="textes" rows="10" cols="100"  style="resize:none;" ></textarea> <br><br>
-	<input type="submit" name="v" value="Valider"    
+	<input id="sub" type="submit" name="v" value="Valider"    
 		<?php echo isset($_SESSION['pseudo'])?"":"disabled";
 		/*if (isset($_POST['titre'])&&isset($_POST['textes'])) {
 		 	if (isempty($_POST['titre'])||isempty($_POST['textes'])) {
@@ -122,6 +133,7 @@ $afficher->closeCursor();
 		 	}}*/
 		 	/*echo empty($_POST['titre'])||empty($_POST['textes'])?"disabled":"enabled";*/
 		 ?> ><br><br>
+		 
 
 			
 		
@@ -130,6 +142,6 @@ $afficher->closeCursor();
 
 	
 </form>
-
-</body>
+<button onclick="annuler();">Annuler</button>
+</div>
 </html>
