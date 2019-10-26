@@ -1,5 +1,5 @@
 <script type="text/javascript" language="javascript">
-	
+
 <!--
 
 function verifier(){
@@ -60,6 +60,7 @@ function connecter(){
   <meta name="viewport" content="width=max-device-width, initial-scale=1"/>
 </head>
 <body id="icb">
+	<section>
 	<div id="idiv1">
 
 <form method="post" name="f1" onsubmit="return verifier();">
@@ -90,7 +91,7 @@ if ($rowP=$verifierP->fetch()) {
 	echo "Le pseudo est utilisé";
 }
 
-else{ 
+else{
 	$inscrire=$objPdo->prepare("INSERT INTO wang245u_blog.redacteur(nom, prenom, adressemail, motdepasse, pseudo) VALUES (?,?,?,?,?)");
 	$inscrire->bindValue(1,$_POST['nom'], PDO::PARAM_STR);
 	$inscrire->bindValue(2,$_POST['prenom'], PDO::PARAM_STR);
@@ -102,7 +103,7 @@ else{
 }
 
 
-	
+
 
 
 }
@@ -113,13 +114,14 @@ else{
 
 ?>
 </div>
-<div id="idiv2">
-	<h1 >
+</section>
+
+	<h1 id="ich">
 		Bienvenu!<br>
 		欢迎！
 	</h1>
-	
-</div>
+
+
 
 </body>
 </html>

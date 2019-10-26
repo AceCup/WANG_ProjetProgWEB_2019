@@ -55,6 +55,7 @@ $identifiant->execute();
   <meta name="viewport" content="width=max-device-width, initial-scale=1"/>
 </head>
 <body id="icb">
+	<section>
 	<div id="cdiv1">
 <form method="post" name="f1" onsubmit="return verifier();">
 	Votre pseudo: <input style="BACKGROUND-COLOR: transparent; color:white; width:80%" type="text" name="pseudo" size="35"><br><br>
@@ -69,12 +70,13 @@ $identifiant->execute();
 
 </form>
 </div>
-<div id="idiv2">
-	<h1 style="filter:alpha(opacity=50)">
+</section>
+
+	<h1 id="ich" style="filter:alpha(opacity=50)">
 		Bienvenu!<br>
 		欢迎！
 	</h1>
 
-</div>
+
 </body>
 </html>
