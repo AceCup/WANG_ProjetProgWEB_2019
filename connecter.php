@@ -5,7 +5,7 @@ include("connexion.php");
 
 session_start();
 if (isset($_POST['pseudo'])&&isset($_POST['mdp'])) {
-	
+
 
 $identifiant=$objPdo->prepare("SELECT idredacteur, pseudo, motdepasse FROM wang245u_blog.redacteur WHERE pseudo=? AND motdepasse=?");
 $identifiant->bindValue(1,$_POST['pseudo'],PDO::PARAM_STR);
@@ -57,15 +57,15 @@ $identifiant->execute();
 <body id="icb">
 	<div id="cdiv1">
 <form method="post" name="f1" onsubmit="return verifier();">
-	Votre pseudo: <input style="BACKGROUND-COLOR: transparent; color:white;" type="text" name="pseudo" size="35"><br><br>
-	Mot de passe: <input style="BACKGROUND-COLOR: transparent; color:white;" type="password" name="mdp" size="35"><br><br>
+	Votre pseudo: <input style="BACKGROUND-COLOR: transparent; color:white; width:80%" type="text" name="pseudo" size="35"><br><br>
+	Mot de passe: <input style="BACKGROUND-COLOR: transparent; color:white; width:80%" type="password" name="mdp" size="35"><br><br>
 					<input id="sub" type="submit" name="c" value="Connecter">
-	
+
 </form>
 
 	Vous n'avez pas de compte? <br><br>
 	<button onclick="verins();">S'inscrire</button>
-	
+
 
 </form>
 </div>
@@ -74,9 +74,7 @@ $identifiant->execute();
 		Bienvenu!<br>
 		欢迎！
 	</h1>
-	
+
 </div>
 </body>
 </html>
-
-

@@ -46,15 +46,17 @@ body{
     right: 0;
     bottom: 0;
      background: rgba(0, 0, 0, 0.6);
-    
+
      color: white;
    }
 
-    
+
 #icb{
  	background-image: url("saber-fate-series-wallpaper-1080p-468970.jpg");
- 	background-position: center;
- 	
+ 	background-size: cover;
+	background-repeat: no-repeat;
+
+
  }
 
 header{position: fixed;
@@ -68,17 +70,17 @@ nav{
 	background-color: #FE6B0C;
 	color:white;
     text-align: center;
-   
+
 height:40px;
 padding-top: 7px;
 }
 #ab{
-	
+
 	background-color: skyblue;
 	background-attachment:fixed ;
 	background-position: center;
 
-	
+
 }
 #rb{
 
@@ -87,11 +89,11 @@ padding-top: 7px;
 	background-position: center;
 }
 #adiv1{
-	
-	
+
+
 }
 #adiv2{
-	
+
 }
 button {
     background-color: #4CAF50; /* Green */
