@@ -34,17 +34,10 @@ include("connexion.php");
 		}
 		
 	}
-	function repondre(){
-		top.location="repondre.php";
-		
-	}
-//456416
+	
+
 	function annuler(){
 		top.location="accueil.php";
-	}
-
-	function creer(){
-		top.location="creerblog.php";
 	}
 
 	-->
@@ -54,8 +47,6 @@ include("connexion.php");
 
 
 </script>
-
-
 
 <html>
 
@@ -83,7 +74,7 @@ if (isset($_SESSION['pseudo'])) {
 	
 </nav>
 </header>
-<body id="ab">
+<body id="rb"> 
 
 
 <?php
@@ -97,39 +88,28 @@ if (isset($_POST['titre'])&&isset($_POST['textes'])) {
 }
 ?>
 
+<div style=" margin-top: 50px; margin-bottom: 50px;">
+<form name="f1" method="post" onsubmit="return vtext();">
+	titre de sujet:<br><br> <input type="text" name="titre" size="50" ><br><br>
+	la contenu de sujet:<br><br> <textarea name="textes" rows="10" cols="100"  style="resize:none;" ></textarea> <br><br>
+	<input id="sub" type="submit" name="v" value="Valider"    
+		<?php echo isset($_SESSION['pseudo'])?"":"disabled";
+		/*if (isset($_POST['titre'])&&isset($_POST['textes'])) {
+		 	if (isempty($_POST['titre'])||isempty($_POST['textes'])) {
+		 		v.disabled;
+		 	}}*/
+		 	/*echo empty($_POST['titre'])||empty($_POST['textes'])?"disabled":"enabled";*/
+		 ?> ><br><br>
+		 
 
-
-<div id="adiv1" style="border:1px solid black; margin-top: 50px; margin-bottom: 10px;" >
-
-<?php
-//afficher des articles
-$afficher=$objPdo->query('SELECT * FROM wang245u_blog.sujet, wang245u_blog.redacteur WHERE wang245u_blog.sujet.idredacteur=wang245u_blog.redacteur.idredacteur ORDER BY datesujet desc' );
-while ($row=$afficher->fetch()) {
-	//$_SESSION['ids']=$row['idsujet'];
-	$ids=$row['idsujet'];
-	echo "<article>";
-	echo "<h1>". $row ['titresujet'] ."</h1>" ;
-	echo "Blog N°".$row['idsujet']." ".$row['datesujet']." by ".$row['pseudo'];
-	echo "<p>".$row['textesujet']."</p>";
-	echo "</article>";
+			
+		
 	
-	echo" <a name='r' style='cursor:pointer; text-decoration:none; color:white;' href=' repondre.php?idsujet=$ids' >repondre</a>"."</br>";
+	
 
-	 
-}
-$afficher->closeCursor();
-
-
-?>
-
+	
+</form>
+<button onclick="annuler();">Annuler</button>
 </div>
-
- 
-
-
 </body>
-<div id="adiv2">
-
-<button onclick="creer();"    <?php echo isset($_SESSION['pseudo'])?"":"disabled";?>>Créer un blog</button>
-</div>
 </html>
