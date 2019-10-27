@@ -33,6 +33,10 @@ function verifier(){
 function connecter(){
 	top.location="connecter.php";
 }
+function sansconnecter(){
+	top.location="accueil.php";
+}
+
 
 
 
@@ -71,8 +75,10 @@ function connecter(){
 	Pseudo:<br> <input style="BACKGROUND-COLOR: transparent; color:white;"  type="text" size="20" name="pseudo"><br><br>
 	<input id="sub" type="submit" name="v" value="Valider"><br><br>
 </form>
-<p>Vous avez déjà un compte?</p><br><br>
-<button onclick="connecter();">Se connecter</button><br>
+Vous avez déjà un compte?<br><br>
+<button onclick="connecter();">Se connecter</button><br><br>
+Visiter le blog sans connexion<br><br>
+<button onclick="sansconnecter();">Accueil</button><br><br>
 <?php
 include("connexion.php");
 try{

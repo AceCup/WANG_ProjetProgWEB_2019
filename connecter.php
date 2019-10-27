@@ -42,6 +42,9 @@ $identifiant->execute();
 	function verins(){
 		top.location="inscrire.php";
 	}
+	function sansconnecter(){
+	top.location="accueil.php";
+}
 
 	-->
 </script>
@@ -65,7 +68,10 @@ $identifiant->execute();
 </form>
 
 	Vous n'avez pas de compte? <br><br>
-	<button onclick="verins();">S'inscrire</button>
+	<button onclick="verins();">S'inscrire</button><br><br>
+	Visiter le blog sans connextion<br><br>
+	<button onclick="sansconnecter();">Accueil</button><br><br>
+
 
 
 </form>
