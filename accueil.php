@@ -86,16 +86,7 @@ if (isset($_SESSION['pseudo'])) {
 <body id="ab">
 
 
-<?php
-if (isset($_POST['titre'])&&isset($_POST['textes'])) {
-	$sujet=$objPdo->prepare("INSERT INTO wang245u_blog.sujet(idredacteur,titresujet, textesujet, datesujet) VALUES (?,?,?,now())");
-	$sujet->bindValue(1,$_SESSION['id'],PDO::PARAM_STR);
-	$sujet->bindValue(2,$_POST['titre'],PDO::PARAM_STR);
-	$sujet->bindValue(3,$_POST['textes'],PDO::PARAM_STR);
-	$sujet->execute();
-	header("Location:accueil.php");
-}
-?>
+
 
 
 
