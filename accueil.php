@@ -39,6 +39,7 @@ include("connexion.php");
 		
 	}
 //456416
+//testgit2022
 	function annuler(){
 		top.location="accueil.php";
 	}
